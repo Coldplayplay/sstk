@@ -13,5 +13,10 @@
     "name": "mpr3d",
     "metadata": "${assetsDir}/data/matterport/mpr3d.json",
     "ids": "${assetsDir}/data/matterport/mpr3d.csv"
+  },
+  {
+    "name": "my_asset",
+    "metadata": "${assetsDir}/data/my_data/my_asset.json",
+    "ids": "${assetDir}/data/my_data/my_asset.csv"
   }
 ]

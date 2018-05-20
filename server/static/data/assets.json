@@ -35,5 +35,9 @@
   {
     "name": "suncgPoses",
     "metadata": "${assetsDir}/data/suncg/suncg.poses.models.json"
+  },
+  {
+    "name": "my_asset",
+    "metadata": "${assetsDir}/data/my_data/my_asset.json"
   }
 ]

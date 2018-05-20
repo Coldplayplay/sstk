@@ -9,6 +9,13 @@
     "metadata": "../server/static/data/matterport/mpr3d.json",
     "ids": "../server/static/data/matterport/mpr3d.csv"
   },
+
+  {
+    "name": "my_data",
+    "metadata": "$../server/static/data/my_data/my_data.json",
+    "ids": "$../server/static/data/my_data/my_data.csv"
+  },
+
   {
     "name": "p5dTexture",
     "metadata": "../server/static/data/suncg/suncg.planner5d.textures.json",

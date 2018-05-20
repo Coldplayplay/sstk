@@ -1,0 +1,36 @@
+{
+    "source": "my_asset",
+    "assetType": "scan",
+    "rootPath": "${baseUrl}/assets/my_asset",
+    "screenShotPath": "${rootPath}/${id}/${id}.png",
+    "hasThumbnail": false,
+    "assetFields": ["segment-annotations-manual", "scan-model-alignments"],    
+    "formats": [
+      { "format": "ply",
+        "path": "${rootPath}/${id}/${id}.ply",
+        "defaultUp": [ 0, 0, 1 ], "defaultFront": [ -1, 0, 0], "defaultUnit": 1,
+        "materialSidedness": "Front",
+        "useVertexColors": true,
+        "computeNormals": true
+      }
+    ],
+    "surfaces": {
+      "format": "segmentGroups",
+      "file":  "${rootPath}/${id}/${id}.segs.json"
+    },
+    "segment-annotations-manual": {
+      "format": "segmentGroups",
+      "files": {
+        "annIds": "${baseUrl}/scans/segment-annotations/list?itemId=${fullId}&$columns=id,workerId,data&format=json&condition[$in]=manual",
+        "segmentGroups": "${baseUrl}/scans/segment-annotations/aggregated?annId=${annId}",
+        "segments": "${rootPath}/${id}/${id}.segs.json",
+        "annotatedAssetIds": "${baseUrl}/scans/segment-annotations/list?$columns=itemId&format=json&condition[$in]=manual"
+      }
+    },
+    "scan-model-alignments": {
+      "files": {
+        "annIds": "${baseUrl}/annotations/list?itemId=${fullId}&$columns=id,workerId,data&format=json&type=scan-model-align&condition[$in]=manual",
+        "annotatedAssetIds": "${baseUrl}/annotations/list?$columns=itemId&format=json&type=scan-model-align&condition[$in]=manual"
+      }
+    }
+  }
